@@ -1,3 +1,5 @@
 #container { width: 650px; margin: 0 auto; padding: 10px 15px;}
-.player_list { overflow: hidden; list-style: none;}
-.player_list li { float: left; margin: 0 10px 10px 0; }
+#player_list { overflow: hidden; list-style: none;}
+#player_list li { float: left; margin: 0 10px 10px 0; display: block; width: 300px; height: 50px; background: #000; }
+
+.player_profile { background: #000; color: #fff; }

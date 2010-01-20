@@ -3,25 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <title>HoN Players</title>
+	<script type="text/javascript" src="jquery.js"></script>
   <link rel="stylesheet" href="reset.css" type="text/css" />
   <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body id="container">
 
 <h2>HoN Players</h2>
-<ul class="player_list">
-	<li><img src="http://honage.net/sig/jhsu/devourer/2/" alt="jhsu" /></li>
-	<li><img src="http://honage.net/sig/jhcloud8/pyromancer/2/" alt="jhcloud8" /></li>
-	<li><img src="http://honage.net/sig/crazydan/pyromancer/2/" alt="crazydan" /></li>
-	<li><img src="http://honage.net/sig/ducky84/pyromancer/2/" alt="ducky84" /></li>
-	<li><img src="http://honage.net/sig/gundavar/pyromancer/2/" alt="gundavar" /></li>
-	<li><img src="http://honage.net/sig/TurkeyDinner/pyromancer/2/" alt="turkeydinner" /></li>
-	<li><img src="http://honage.net/sig/fatalbert022/pyromancer/2/" alt="fatalbert022" /></li>
-	<li><img src="http://honage.net/sig/chungolo/pyromancer/2/" alt="chungolo" /></li>
-	<li><img src="http://honage.net/sig/gcxdaniel/pyromancer/2/" alt="gcxdaniel" /></li>
-	<li><img src="http://honage.net/sig/meitantei/pyromancer/2/" alt="meitantei" /></li>
-	<li><img src="http://honage.net/sig/limpdick/pyromancer/2/" alt="limpdick" /></li>
+<ul id="player_list">
 </ul>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		players = ["jhsu", "jhcloud8", "crazydan", "ducky84", "gundavar", "turkeydinner", "fatalbert022", "chungolo", "gcxdaniel", "meitantei", "limpdick"];
+		template = "<img src='http://honage.net/sig/username/character/2/' width='300px' height='50px' class='player_profile' alt='' />";
+		for(i=0; i < players.length; i++) {
+			player = players[i];
+			image = $(template.replace("username", player).replace("character", "pyromancer")).attr("alt", player);
+			output = $("<li />").html(image);
+			$("#player_list").append(output);
+		}
+	});
+</script>
 </body>
 </html>
-
